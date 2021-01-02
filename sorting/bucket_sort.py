@@ -18,11 +18,13 @@ def bucket_sort(nums:List[int]) -> None:
     buckets = [[] for _ in range(n+1)]
     nums_range_factor = n / (nums_max - nums_min)
     for num in nums:
+        print(int((num - nums_min) * nums_range_factor))
         buckets[int((num - nums_min) * nums_range_factor)].append(num)
 
     for bucket in buckets:
         insertion_sort(bucket)
 
+    print("buckets:", buckets)
     return reduce(lambda a, b: a+b, buckets)
 
 class Tests(unittest.TestCase):
