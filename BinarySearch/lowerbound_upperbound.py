@@ -11,7 +11,9 @@ def lowerbound(A: List[int], t:int) -> int:
             r = mid - 1
         else:
             l = mid + 1
-    return l  
+    if l >= len(A) or A[l] != t:
+        return -1
+    return l
 
 # move towards right
 def upperbound(A: List[int], t:int) -> int:
@@ -22,7 +24,9 @@ def upperbound(A: List[int], t:int) -> int:
             l = mid + 1
         else:
             r = mid - 1
-    return l       
+    if r < 0 or A[r] != t:
+        return -1
+    return r    
 
 class Tests(unittest.TestCase):
     def test_lower_bound_ex1(self):
@@ -37,9 +41,7 @@ class Tests(unittest.TestCase):
         A = [1, 3, 4, 4, 4, 4, 5, 6, 7, 8]
         t = 4
         result = upperbound(A, t)
-        upper_bound = bisect_right(A, t)
-        #print(upper_bound)
-        self.assertEqual(upper_bound, result)
+        self.assertEqual(5, result)
 
     def test_upper_bound_ex3(self):
         A = [4, 5, 6, 7, 8]

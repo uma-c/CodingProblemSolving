@@ -11,13 +11,13 @@ dups([​2​, ​1​, ​2​, ​1​]) = [​1​, ​2​]
 from typing import List
 import unittest
 
-# Time complexity = O(n), Space complexity = O(n)
+# Time complexity = O(n), Space complexity = O(1)
 def find_duplicates(A:List[int]) -> List[int]:
     dups = set()
     for i in range(len(A)):
         index = abs(A[i]) - 1
         if A[index] < 0:
-            dups.add(abs(A[index]))
+            dups.add(abs(A[i]))
         else:
             A[index] = -A[index]
     return list(dups)
@@ -42,6 +42,11 @@ class Tests(unittest.TestCase):
         A = [2, 1, 2, 1]
         dups = find_duplicates(A)
         self.assertEqual([1, 2], dups)
+
+    def test_ex5(self):
+        A = [10,2,5,10,9,1,1,4,3,7]
+        dups = find_duplicates(A)
+        self.assertEqual([1, 10], dups)
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)

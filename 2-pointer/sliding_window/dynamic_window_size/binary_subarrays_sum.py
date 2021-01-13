@@ -15,7 +15,7 @@ import unittest
 import collections
 
 '''
-Prefx sum approach
+Prefix sum approach
 '''
 # Time complexity: O(n), Space complexity: O(n)
 def no_of_non_empty_subarrays_sum(A: List[int], S: int)->int:
