@@ -10,17 +10,18 @@ import unittest
 3 items - 3c3 = 1
 all combinations = 8 = 2^3
 '''
+
 def _combinations_recursive(A:Set[int])->List[Set[int]]:
     if len(A) < 1:
         return [set()]
 
     num = A.pop()
-    perms = _combinations_recursive(A)
-    for i in range(len(perms)):
-        perm = perms[i].copy()
-        perm.add(num)
-        perms.append(perm)
-    return perms
+    combs = _combinations_recursive(A)
+    for i in range(len(combs)):
+        comb = combs[i].copy()
+        comb.add(num)
+        combs.append(comb)
+    return combs
 
 def combinations_recursive(A:Set[int])->List[Set[int]]:
     return _combinations_recursive(A)
@@ -71,6 +72,10 @@ class Tests(unittest.TestCase):
         result = combinations("lee")
         expected = [[], ['l'], ['e'], ['l', 'e'], ['e', 'e'], ['l', 'e', 'e']]
         self.assertEqual(expected, result)
+
+    def test_get_combinations_ex1(self):
+        result = combinations_recursive([1,2,3], 2)
+        print(result)
 
 if __name__ == "__main__":
     unittest.main(verbosity = 2)

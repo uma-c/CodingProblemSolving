@@ -2,7 +2,7 @@ import collections
 
 class Queue(object):
     def __init__(self):
-        self._deque = collections.deque() # decreasing queue front is max, back is min
+        self._deque = collections.deque() # decreasing queue; front is max, back is min
 
     def max(self) -> int:
         return self._deque[0]

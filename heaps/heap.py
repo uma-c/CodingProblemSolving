@@ -48,6 +48,8 @@ class Heap:
         for i in range(index, -1, -1):
             self._heapify_down(i)
 
+    def __len__(self):
+        return len(self.arr)
 
 if __name__ == "__main__":
     min_heap = Heap(lambda a, b : a < b)

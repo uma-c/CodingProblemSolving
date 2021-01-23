@@ -5,7 +5,6 @@ def find_two_sum(numbers:List[int], target:int)->List[int]:
     if numbers is None or len(numbers) < 1:
         return [None, None]
     i, j = 0, len(numbers) - 1
-    two_sum = float("inf")
     while i < j:
         two_sum  = numbers[i] + numbers[j]
         if two_sum == target:

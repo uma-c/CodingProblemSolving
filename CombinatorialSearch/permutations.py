@@ -73,7 +73,7 @@ class Tests(unittest.TestCase):
         self.assertListEqual([[1]], result)
 
     def test_ex_dups1(self):
-        nums = [1, 2, 2]
+        nums = [2,1,2]
         self.assertListEqual([[1, 2, 2], [2, 1, 2], [2, 2, 1]], permute(nums))
 
 
