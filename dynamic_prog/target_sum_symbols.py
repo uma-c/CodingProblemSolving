@@ -39,7 +39,7 @@ from typing import List
 def find_target_sum_ways(nums: List[int], t: int) -> int:
     s = sum(nums) # O(n)
     ps = (t + s) // 2 # positives sum
-    if ps != ((t + s) / 2):
+    if t > s or -t < -s or ps != ((t + s) / 2):
         return 0
     prev_row = [0] * (ps + 1)
     prev_row[0] = 1
