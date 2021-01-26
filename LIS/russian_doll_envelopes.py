@@ -23,26 +23,24 @@ import unittest
 def max_envelopes(envelopes:List[List[int]]) -> int:
     if envelopes is None or len(envelopes) < 1:
         return 0
-    
-    se = []
-    for e in envelopes:
-        se.append([e[0], e[0] - e[1], e[1]])
-    se.sort()
-    dp = [se[0]]
-    for i in range(1, len(se)):
-        if dp[-1][0] < se[i][0] and dp[-1][2] < se[i][2]:
-            dp.append(se[i])
+
+    # this is core idea; sort by width and if width matches, then descending order of height
+    envelopes.sort(key=lambda ae:[ae[0], ae[0] - ae[1]])
+    lis = [envelopes[0]]
+    for i in range(1, len(envelopes)):
+        if lis[-1][0] < envelopes[i][0] and lis[-1][1] < envelopes[i][1]:
+            lis.append(envelopes[i])
         else:
-            l, r = 0, len(dp) - 1
+            l, r = 0, len(lis) - 1
             while l <= r:
                 m = l + (r - l) // 2
-                if dp[m][2] < se[i][2]:
+                if lis[m][1] < envelopes[i][1]:
                     l = m + 1
                 else:
                     r = m - 1
-            if 0 <= l < len(dp):
-                dp[l] = se[i]
-    return len(dp)
+            if 0 <= l < len(lis):
+                lis[l] = envelopes[i]
+    return len(lis)
 
 class Tests(unittest.TestCase):
     def test_ex1(self):
@@ -64,12 +62,6 @@ class Tests(unittest.TestCase):
     def test_ex5(self):
         e = [[1,2],[2,3],[3,4],[3,5],[4,5],[5,5],[5,6],[6,7],[7,8]]
         self.assertEqual(7, max_envelopes(e))
-
-    # def test_lis(self):
-    #     nums = [5, 3, 7, 4, 2, 9]
-    #     result = lis(nums)
-    #     print(result)
-    #     self.assertEqual(3, len(result))
 
 if __name__ == "__main__":
     unittest.main(verbosity = 2)
