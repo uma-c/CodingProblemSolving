@@ -1,0 +1,18 @@
+Understand the problem. Are there any details do I need to solve the problem? Any constraints? [50% problem solved]
+Identify "pattern" and come up with algorithm and check if that works. [70% problem solved]
+Know time compelxity and space complexity of the solution. [75% problem solved]
+Check with interviewer if solution is good. [80% problem solved]
+Upon interviewer's nod to implement, write code. [90% problem solved]
+ - Discuss pitfalls and improvements
+ - Skip if something is available in library. Discuss with interviewer.
+Verify your code with examples and edge cases. [100% problem solved]
+
+------------------------------------------------------------------
+** SPEAK UP YOUR MIND...SPEAK UP YOUR MIND...SPEAK UP YOUR MIND **
+------------------------------------------------------------------
+
+Do I know everything I need to?
+Can I identify a pattern by drawing it?
+Iterative or recursive?
+Will I be able to code this approach?
+How can I improve this approach?
