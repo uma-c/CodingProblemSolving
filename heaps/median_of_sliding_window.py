@@ -30,7 +30,6 @@ Answers within 10^-5 of the actual value will be accepted as correct.
 '''
 from typing import List
 import heapq
-from collections import OrderedDict
 
 def median_of_sliding_window(nums: List[int], k: int) -> List[float]:
     result = []

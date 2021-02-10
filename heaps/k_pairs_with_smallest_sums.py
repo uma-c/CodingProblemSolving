@@ -39,7 +39,7 @@ def k_smallest_pairs(nums1:List[int], nums2:List[int], k:int) -> List[List[int]]
     for i in range(n1):
         for j in range(n2):
             l.append([nums1[i], nums2[j]])
-    return heapq.nsmallest(k, l, key = lambda x:x[0] + x[1])
+    return heapq.nsmallest(k, l, key = lambda x: x[0] + x[1])
 
 if __name__ == "__main__":
-    print(k_smallest_pairs([1,1,2], [1,2,3], 10))
+    print(k_smallest_pairs([1,1,2], [1,2,3], 5))

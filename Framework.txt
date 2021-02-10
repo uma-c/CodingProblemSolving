@@ -7,12 +7,31 @@ Upon interviewer's nod to implement, write code. [90% problem solved]
  - Skip if something is available in library. Discuss with interviewer.
 Verify your code with examples and edge cases. [100% problem solved]
 
-------------------------------------------------------------------
-** SPEAK UP YOUR MIND...SPEAK UP YOUR MIND...SPEAK UP YOUR MIND **
-------------------------------------------------------------------
+-----------------------------------------------------------------------
+** THINK LOUD...SPEAK UP YOUR MIND...THINK LOUD...SPEAK UP YOUR MIND **
+-----------------------------------------------------------------------
 
 Do I know everything I need to?
 Can I identify a pattern by drawing it?
 Iterative or recursive?
 Will I be able to code this approach?
 How can I improve this approach?
+
+
+Review
+------
+Graph Theory
+Trees
+Segment Tree
+Trie
+Heaps
+Back tracking
+Dynamic Programming
+Sorting
+Binary Search
+2 pointer
+Sliding Window
+Marker technique
+Linked Lists
+Stacks and Queues
+Monotonic Stacks & Queues

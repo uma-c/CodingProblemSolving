@@ -14,8 +14,7 @@ class Heap:
         self._heapify_up(len(self.arr) - 1)
 
     def pop(self):
-        self.arr[0] = self.arr[-1]
-        self.arr.pop()
+        self.arr[0] = self.arr.pop()        
         self._heapify_down(0)
 
     def _heapify_up(self, k):
