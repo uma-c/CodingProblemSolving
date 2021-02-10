@@ -1,6 +1,7 @@
 from binarytree import TreeNode
 from typing import List
 import unittest
+import queue
 
 def preorder_traversal(tree:TreeNode, result:List[int]):
     if tree is None:
@@ -30,15 +31,15 @@ def levelorder_traversal(tree:TreeNode, result:List[int]):
     if tree is None:
         return
     
-    queue = [tree]
-    while queue:
-        t = queue[0]
-        queue.pop(0)        
+    q = queue.Queue()
+    q.put(tree)
+    while not q.empty():
+        t = q.get()        
         result.append(t.value)
         if t.left is not None:
-            queue.append(t.left)
+            q.put(t.left)
         if t.right is not None:
-            queue.append(t.right)
+            q.put(t.right)
 
 class Tests(unittest.TestCase):
     def test_preorder_traversal(self):
