@@ -16,5 +16,5 @@ def lps(s:str) -> int:
     return l
 
 if __name__ == "__main__":
-    #print(lps('cbbd'))
-    print(lps('a'))
+    print(lps('cbbd'))
+    #print(lps('a'))
