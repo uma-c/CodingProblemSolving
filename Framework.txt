@@ -31,6 +31,7 @@ Sorting
 Binary Search
 2 pointer
 Sliding Window
+Prefix Sum
 Marker technique
 Linked Lists
 Stacks and Queues
