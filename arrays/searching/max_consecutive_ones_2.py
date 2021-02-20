@@ -29,10 +29,13 @@ def max_consecutive_ones(nums:List[int]) -> int:
             max1s = max(max1s, last_streak + streak + 1)
             last_streak = streak
             last_zero = i
+    streak = len(nums) if last_zero < 0 else (len(nums) - last_zero - 1)
+    max1s = max(max1s, last_streak + streak + (0 if last_zero < 0 else 1))
     return max1s
 
 if __name__ == "__main__":
     #nums = [1,0,1,1,0]
     #nums = [1,1,1,1,0]
-    nums = [0,1,1,1,1,0]
+    #nums = [0,1,1,1,1,0]
+    nums = [1, 1, 0, 1]
     print(max_consecutive_ones(nums))

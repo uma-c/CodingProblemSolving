@@ -1,6 +1,8 @@
 from list_node import ListNode
 
 def reverse_list(head:ListNode) -> ListNode:
+    if not head:
+        return head
     prev = head
     curr = head.next
     prev.next = None
