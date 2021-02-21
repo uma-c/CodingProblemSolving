@@ -63,8 +63,9 @@ def copyRandomList(head: Node) -> Node:
     node = head
     # copy random pointers
     while node:
-        new_node = node.next      
-        new_node.random = node.random.next
+        new_node = node.next
+        if node.random:      
+            new_node.random = node.random.next
         node = new_node.next
     new_list_dummy = Node(0)
     new_list_node = new_list_dummy
