@@ -72,7 +72,7 @@ def build_tree(s: str)->TreeNode:
             val.append(s[i])
         i += 1
 
-    return lvl_nodes_map[0][0] if lvl_nodes_map.get(0) is not None else None
+    return lvl_nodes_map[0][0] if lvl_nodes_map.get(0) else None
 
 class Tests(unittest.TestCase):
     def test_ex1(self):
