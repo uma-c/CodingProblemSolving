@@ -20,21 +20,14 @@ Constraints:
 import unittest
 
 def is_perfect_square(num:int) -> bool:
-    if num < 0:
+    if 0 <= num < 2:
+        return True
+    elif num < 0:
         return False
-
-    l, r = 1, num
-    while l <= r:
-        m = l + (r - l) // 2
-        sqr = m * m
-        if sqr == num:
-            return True
-        elif sqr > num:
-            r = m - 1
-        else:
-            l = m + 1
-
-    return False
+    x = num // 2
+    while x * x > num:
+        x = (x + num // x) // 2
+    return x * x == num
 
 class Tests(unittest.TestCase):
     def test_ex1(self):

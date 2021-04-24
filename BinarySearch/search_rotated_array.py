@@ -17,26 +17,25 @@ Search(set):
     return "not found"
 '''
 def bsearch(nums: List[int], target: int, i: int, j: int) -> int:
-    l, r = i, j
-    while l <= r:
-        m = l + (r - l) // 2
-        if nums[m] == target:
-            return m
-        elif nums[l] <= target < nums[m]: # left is sorted
-            r = m - 1
-        elif nums[m] < target <= nums[r]: # right is sorted
-            l = m + 1
-        elif nums[m] > nums[r]: # right is not sorted
-            l = m + 1
-        elif nums[l] > nums[m]: # left is not sorted
-            r = m - 1
+    if i > j:
+        return -1
+    m = i + (j - i) // 2
+    if nums[m] == target:
+        return m
+    elif nums[i] < nums[m]:
+        if nums[i] <= target < nums[m]:
+            return bsearch(nums, target, i, m - 1)
         else:
-            result = bsearch(nums, target, l, m - 1)
-            if (result == -1):
-                return bsearch(nums, target, m + 1, r)
-            else:
-                return result
-    return -1
+            return bsearch(nums, target, m + 1, j)
+    elif nums[m] < nums[j]:
+        if nums[m] < target <= nums[j]:
+            return bsearch(nums, target, m + 1, j)
+        else:
+            return bsearch(nums, target, i, m - 1)
+    else:
+        result = bsearch(nums, target, i, m - 1)
+        return result if result != -1 else bsearch(nums, target, m + 1, j)
+    
 
 def find_k(nums: List[int], target: int) -> int:
     return bsearch(nums, target, 0, len(nums) - 1)
